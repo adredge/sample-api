@@ -5,11 +5,14 @@
   "scripts": {
     "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test-acceptance": "./node_modules/.bin/mocha \"./src/**/*.a-specs.js\""
+    "test-acceptance": "./node_modules/.bin/mocha \"./*.a-specs.js\"",
+    "ta": "./node_modules/.bin/mocha \"./*.a-specs.js\" || true"
   },
   "author": "Amy Dredge",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.15.3",
+    "chai": "^3.5.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
