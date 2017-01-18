@@ -17,7 +17,6 @@ module.exports = {
 
 function makeApiCall(relativeUrl) {
     let url = `http://localhost:3000/${relativeUrl}`
-    console.log('url', url)
     return axios.get(url)
         .then(response => response.data)
 }
