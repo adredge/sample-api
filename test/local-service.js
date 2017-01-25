@@ -1,6 +1,6 @@
 "use strict"
 
-const childProcess = require('child_process')
+const childProcess = require('child_process');
 
 module.exports = class LocalService {
     constructor(serviceFilePath) {
@@ -10,7 +10,7 @@ module.exports = class LocalService {
 
     start() {
         if (this.serviceProcess)
-            return Promise.reject(new Error('The service is already running!'))
+            return Promise.reject(new Error('The service is already running!'));
 
         return LocalService.startChildProcess(this.serviceFilePath)
             .then(process => this.serviceProcess = process)
@@ -23,14 +23,14 @@ module.exports = class LocalService {
 
     static startChildProcess(serviceFilePath) {
         return new Promise((resolve, reject) => {
-            const child = childProcess.fork(serviceFilePath)
+            const child = childProcess.fork(serviceFilePath);
 
             child.on('message', m => {
-                console.log('child process received message', m)
+                console.log('child process received message', m);
                 //if (m === 'service_started')
                 //    resolve(child)
-            })
-            resolve(child)
+            });
+            resolve(child);
 
             //child.on('error', err => {
             //    console.error('LOCAL-SERVICE: failed to start child process!', err)
@@ -44,11 +44,11 @@ module.exports = class LocalService {
     }
 
     static killChildProcess(proc) {
-        if (!proc) return Promise.resolve()
+        if (!proc) return Promise.resolve();
 
         return new Promise((resolve) => {
-            proc.once('close', code => resolve(code))
-            proc.kill('SIGINT')
+            proc.once('close', code => resolve(code));
+            proc.kill('SIGINT');
         })
     }
-}
+};

@@ -1,6 +1,6 @@
 "use strict"
 
-const acceptanceSpecsHelper = require('./test/acceptance-specs-helper');
+const acceptanceSpecsHelper = require('./acceptance-specs-helper');
 
 describe('/', () => {
     context('when rolling a six-sided die', () => {
