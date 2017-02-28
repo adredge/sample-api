@@ -1,12 +1,12 @@
 {
-  "name": "sample-api",
+  "name": "roll-a-die",
   "version": "1.0.0",
-  "description": "Sample API with acceptance testing",
+  "description": "A web api for rolling an x-sided die",
   "scripts": {
     "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-acceptance": "./node_modules/.bin/mocha \"./test/*.a-specs.js\"",
-    "ta": "./node_modules/.bin/mocha \"./test/*.a-specs.js\" || true"
+    "ta": "./node_modules/.bin/mocha \"./test/*a-specs.js\" || true"
   },
   "author": "Amy Dredge",
   "license": "ISC",
